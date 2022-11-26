@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Realizarreservaciones</title>
+  <link rel="stylesheet" href="misreservaciones.component.css">
+</head>
+<body>
+
+<div class="main">
+  <div class="navbar">
+    <div class="icon">
+      <h2 class="logo"><a href="home"> ArrowFast</a></h2>
+    </div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="home">HOME</a></li>
+        <li><a *ngIf="menu3" href="misreservaciones">Mis reservaciones</a></li>
+        <li><a *ngIf="menu2" href="realizarreservaciones">Realizar reservacion</a></li>
+        <li><a *ngIf="menu4" href="encomiendas">Encomiendas</a></li>
+        <li><a *ngIf="menu1" href="ventasboletos">Venta de Boletos</a></li>
+        <li><a href="#">Cerrar Sesion</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="grid-container">
+    <h3>Mis reservaciones</h3>
+    <div class="row">
+      <div class="table01 col-12">
+        <button (click)="exportexcel()">Export to Excel</button>
+        <table class="table table-striped" id="excel">
+          <thead class="borde">
+          <tr>
+            <th class="encabezado" scope="col">Numero encomienda</th>
+            <th class="encabezado" scope="col">Fragil</th>
+            <th class="encabezado" scope="col">Descripcion</th>
+            <th class="encabezado" scope="col">Peso</th>
+            <th class="encabezado" scope="col">Codigo de tarifa</th>
+            <th class="encabezado" scope="col">Codigo de tipo encomienda</th>
+            <th class="encabezado" scope="col">Codigo de la ruta de la encomienda</th>
+            <th class="encabezado" scope="col">Codigo del remitente</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let reservacion of reservaciones ">
+            <th scope="row">{{reservacion.idEncomienda}}</th>
+            <td>{{reservacion.fragil}}</td>
+            <td>{{reservacion.descripcion}}</td>
+            <td>{{reservacion.peso}}</td>
+            <td>{{reservacion.idTarifaEncomienda}}</td>
+            <td>{{reservacion.idTipoEncomienda}}</td>
+            <td>{{reservacion.idRuta}}</td>
+            <td>{{reservacion.idRemitente}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

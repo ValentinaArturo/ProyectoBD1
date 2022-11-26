@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>Realizarreservaciones</title>
+  <link rel="stylesheet" href="realizarreservaciones.component.css">
+</head>
+<body>
+
+<div class="main">
+  <div class="navbar">
+    <div class="icon">
+      <h2 class="logo"><a href="home"> ArrowFast</a></h2>
+    </div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="home">HOME</a></li>
+        <li><a *ngIf="menu3" href="misreservaciones">Mis reservaciones</a></li>
+        <li><a *ngIf="menu2" href="realizarreservaciones">Realizar reservacion</a></li>
+        <li><a *ngIf="menu4" href="encomiendas">Encomiendas</a></li>
+        <li><a *ngIf="menu1" href="ventasboletos">Venta de Boletos</a></li>
+        <li><a href="#">Cerrar Sesion</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="grid-container">
+    <h3 class="encabezado01">Reservacions y compras en linea</h3>
+    <div class="row">
+      <div class="table01 col-6">
+        <table class="table table-striped">
+          <thead class="borde">
+          <tr>
+            <th class="encabezado" scope="col">Bus</th>
+            <th class="encabezado" scope="col">Pasajeros</th>
+            <th class="encabezado" scope="col">Matricula</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let viaje of viajes01">
+            <th scope="row">{{viaje.descripcion}}</th>
+            <td>{{viaje.pasajeros}}</td>
+            <td>{{viaje.matricula}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table02 col-6">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th class="encabezado" scope="col">Numero de ruta</th>
+            <th class="encabezado" scope="col">Hora Salida</th>
+            <th class="encabezado" scope="col">Hora Llegada</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let viaje of viajes02">
+            <th scope="row">{{viaje.idRuta}}</th>
+            <th scope="row">{{viaje.horaSalida}}</th>
+            <th scope="row">{{viaje.horaLlegada}}</th>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-container-form">
+    <form class="encomiendas-form" id="loginForm">
+      <label class="label" style="color:white">Numero Boleto</label>
+      <input type="number" placeholder="Boleto" name="boleto" onfocus="this.value=''" [(ngModel)]="viajeModel.idBoleto">
+      <label class="label" style="color:white">Numero Viaje</label>
+      <input type="number" placeholder="Viaje" name="viaje" [(ngModel)]="viajeModel.idViaje">
+      <button (click)="crearReservacion()" class="boton-encomiendas">Ingresar</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

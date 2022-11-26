@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+<header>
+    <div class="navbar">
+        <div class="icon">
+          <h2 class="logo"><a href="home"> ArrowFast</a></h2>
+        </div>
+
+        <div class="menu">
+          <ul>
+
+            <li><a href="#">Regresar</a></li>
+          </ul>
+        </div>
+
+      </div>
+</header>
+<body>
+    <div class="login">
+        <div class="form-container">
+            <h1 class="title">Mi Cuenta</h1>
+            <form action="/" (ngSubmit)="createAccount()" id="form">
+                <div>
+                    <label for="first-name" class="label">Nombre</label>
+                    <input type="text" id="first-name" placeholder="Ej: Fernando" class="input input-first-name" [(ngModel)]="users.nombre" [ngModelOptions]="{standalone:true}" required>
+
+                    <label for="second-name" class="label">Apellido</label>
+                    <input type="text" id="second-name" placeholder="Ej: Jose" class="input input-second-name" [(ngModel)]="users.apellido" [ngModelOptions]="{standalone:true}" required>
+
+                    <label for="first-last-name" class="label">Telefono</label>
+                    <input type="text" id="first-last-name" placeholder="Ej: 12345678" class="input input-first-last-name" [(ngModel)]="users.telefono" [ngModelOptions]="{standalone:true}" required>
+
+                    <label for="second-last-name" class="label">Correo</label>
+                    <input type="text" id="second-last-name" placeholder="Ej: correo@gmail.com" class="input input-second-last-name" [(ngModel)]="users.correo" [ngModelOptions]="{standalone:true}" required>
+
+                    <label for="phone" class="label">Direccion</label>
+                    <input type="text" id="phone" placeholder="Ej: No. Avenida" class="input input-phone" [(ngModel)]="users.direccion" [ngModelOptions]="{standalone:true}" required>
+
+                  <label for="phone" class="label">Documento de identificacion</label>
+                  <input type="text" id="documento" placeholder="Ej: 62538468" class="input input-phone" [(ngModel)]="users.nit" [ngModelOptions]="{standalone:true}" required>
+
+                    <label for="password" class="label">Contraseña</label>
+                    <input type="password" id="password" placeholder="********" class="input input-password" [(ngModel)]="users.password" [ngModelOptions]="{standalone:true}" required>
+                </div>
+                <input type="submit" value="Crear" class="primary-button login-button">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

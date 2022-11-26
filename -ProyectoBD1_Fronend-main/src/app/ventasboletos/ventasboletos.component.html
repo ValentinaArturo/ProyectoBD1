@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Realizarreservaciones</title>
+  <link rel="stylesheet" href="ventasboletos.component.css">
+</head>
+<body>
+
+<div class="main">
+  <div class="navbar">
+    <div class="icon">
+      <h2 class="logo"><a href="home"> ArrowFast</a></h2>
+    </div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="home">HOME</a></li>
+        <li><a href="misreservaciones">Mis reservaciones</a></li>
+        <li><a href="realizarreservaciones">Realizar reservacion</a></li>
+        <li><a href="encomiendas">Encomiendas</a></li>
+        <li><a href="ventasboletos">Venta de Boletos</a></li>
+        <li><a href="#">Cerrar Sesion</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="grid-container">
+    <h3>Boletos</h3>
+    <div class="row">
+      <div class="table01 col-12">
+        <button (click)="exportexcel()">Export to Excel</button>
+        <table class="table table-striped" id="excel">
+          <thead class="borde">
+          <tr>
+            <th class="encabezado" scope="col">Numero de boleto</th>
+            <th class="encabezado" scope="col">Codigo de boleto</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let boleto of boleto">
+            <th scope="row">{{boleto.idBoleto}}</th>
+            <td>{{boleto.numero_Boleto}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="grid-container-form">
+    <!--(ngSubmit)="validar()"-->
+    <form class="encomiendas-form" id="loginForm">
+      <button (click)="crearBoleto()" class="boton-encomiendas"><h4>Crear boleto</h4></button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
